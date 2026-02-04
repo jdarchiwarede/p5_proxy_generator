@@ -75,7 +75,9 @@ Copy files to `C:\Program Files\ARCHIWARE\Data_Lifecycle_Management_Suite\script
 
 1. Open your Archive Plan in the P5 Browser
 2. Navigate to the **Previews** section
-3. Set the preview converter script to: `python scripts/p5_proxy_generator.py`
+3. Set the preview converter script to:
+   - **Windows:** `python scripts/p5_proxy_generator.py`
+   - **macOS/Linux:** `python3 scripts/p5_proxy_generator.py`
 4. Add file extensions (e.g., `.mov`, `.mp4`, `.mxf`, `.avi`)
 
 ### Step 4: Configure the script
