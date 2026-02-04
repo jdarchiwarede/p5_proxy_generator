@@ -20,14 +20,17 @@ A cross-platform proxy generation script for [P5 Archive](https://www.archiware.
 ### Python Installation
 
 **Windows:**
+
 Download from [python.org](https://www.python.org/downloads/) and install. Make sure to check "Add Python to PATH" during installation.
 
 **macOS:**
+
 ```bash
 brew install python
 ```
 
 **Linux (Ubuntu/Debian):**
+
 ```bash
 sudo apt install python3
 ```
@@ -36,40 +39,54 @@ sudo apt install python3
 
 For advanced encoding options (CRF, presets, tune), install FFmpeg with libx264 support:
 
+**macOS:**
+
 ```bash
-# macOS with Homebrew
 brew install ffmpeg
-
-# Linux (Ubuntu/Debian)
-sudo apt install ffmpeg
-
-# Windows
-# Download from https://ffmpeg.org/download.html
 ```
+
+**Linux (Ubuntu/Debian):**
+
+```bash
+sudo apt install ffmpeg
+```
+
+**Windows:**
+
+Download from [ffmpeg.org](https://ffmpeg.org/download.html) and extract to a folder like `C:\ffmpeg`.
 
 ## Installation
 
 ### Step 1: Create scripts directory
 
 **macOS/Linux:**
+
 ```bash
 sudo mkdir -p /usr/local/aw/scripts
 ```
 
 **Windows:**
-The directory already exists at `C:\Program Files\ARCHIWARE\Data_Lifecycle_Management_Suite\scripts`
+
+```cmd
+mkdir "C:\Program Files\ARCHIWARE\Data_Lifecycle_Management_Suite\scripts"
+```
 
 ### Step 2: Copy the scripts
 
 Copy both `aw_platform.py` and `p5_proxy_generator.py` to the scripts directory:
 
 **macOS/Linux:**
+
 ```bash
 sudo cp aw_platform.py p5_proxy_generator.py /usr/local/aw/scripts/
 ```
 
 **Windows:**
-Copy files to `C:\Program Files\ARCHIWARE\Data_Lifecycle_Management_Suite\scripts\`
+
+```cmd
+copy aw_platform.py "C:\Program Files\ARCHIWARE\Data_Lifecycle_Management_Suite\scripts\"
+copy p5_proxy_generator.py "C:\Program Files\ARCHIWARE\Data_Lifecycle_Management_Suite\scripts\"
+```
 
 ### Step 3: Configure P5 Archive Plan
 
@@ -230,11 +247,13 @@ WORKFLOW_STORE_SOURCE = "workflow"
 ### Enable Debug Mode
 
 Edit `aw_platform.py` and set:
+
 ```python
 DEBUG_MODE = True
 ```
 
 Or add at the top of `p5_proxy_generator.py` after the import:
+
 ```python
 aw.DEBUG_MODE = True
 ```
@@ -242,13 +261,15 @@ aw.DEBUG_MODE = True
 ### Check Log File
 
 **macOS/Linux:**
+
 ```bash
 cat /usr/local/aw/temp/proxy_generator.log
 ```
 
 **Windows:**
-```
-C:\Program Files\ARCHIWARE\Data_Lifecycle_Management_Suite\temp\proxy_generator.log
+
+```cmd
+type "C:\Program Files\ARCHIWARE\Data_Lifecycle_Management_Suite\temp\proxy_generator.log"
 ```
 
 ### Common Issues
@@ -267,12 +288,14 @@ C:\Program Files\ARCHIWARE\Data_Lifecycle_Management_Suite\temp\proxy_generator.
 Test the script from command line to verify it works:
 
 **macOS/Linux:**
+
 ```bash
 cd /usr/local/aw
 python3 scripts/p5_proxy_generator.py "/path/to/test/video.mp4"
 ```
 
 **Windows:**
+
 ```cmd
 cd "C:\Program Files\ARCHIWARE\Data_Lifecycle_Management_Suite"
 python scripts\p5_proxy_generator.py "X:\path\to\test\video.mp4"
