@@ -151,7 +151,7 @@ def init_ffmpeg():
     if FFMPEG_PATH and os.path.isfile(FFMPEG_PATH):
         try:
             result = subprocess.run([FFMPEG_PATH, '-encoders'], 
-                                    capture_output=True, text=True)
+                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
             if 'libx264' in result.stdout:
                 FFMPEG = FFMPEG_PATH
                 USE_LIBX264 = True
@@ -298,7 +298,7 @@ def generate_proxy(input_file, output_file, scale, vbitrate, abitrate,
     cmd += ["-f", container, "-loglevel", "error", "-y", output_file]
     
     # Execute FFmpeg
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
     if result.stderr:
         aw.log(result.stderr)
     
