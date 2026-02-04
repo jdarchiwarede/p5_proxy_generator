@@ -14,7 +14,7 @@ A cross-platform proxy generation script for [P5 Archive](https://www.archiware.
 ## Requirements
 
 - P5 Archive 7.x or later
-- Python 3.7 or later
+- Python 3.6 or later
 - P5's built-in FFmpeg (included with P5) or custom FFmpeg installation
 
 ### Python Installation
